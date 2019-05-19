@@ -19,7 +19,7 @@
 #define ANDROID_HARDWARE_POWER_V1_1_POWER_H
 
 #include <android/hardware/power/1.1/IPower.h>
-#include <vendor/slim/power/1.0/ISlimPower.h>
+#include <vendor/broken/power/1.0/ISlimPower.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <hardware/power.h>
@@ -33,8 +33,8 @@ namespace implementation {
 using ::android::hardware::power::V1_0::Feature;
 using ::android::hardware::power::V1_0::PowerHint;
 using ::android::hardware::power::V1_1::IPower;
-using ::vendor::slim::power::V1_0::ISlimPower;
-using ::vendor::slim::power::V1_0::SlimFeature;
+using ::vendor::broken::power::V1_0::ISlimPower;
+using ::vendor::broken::power::V1_0::SlimFeature;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 
@@ -53,7 +53,7 @@ struct Power : public IPower, public ISlimPower {
     Return<void> getSubsystemLowPowerStats(getSubsystemLowPowerStats_cb _hidl_cb) override;
     Return<void> powerHintAsync(PowerHint hint, int32_t data) override;
 
-    // Methods from ::vendor::slim::power::V1_0::ISlimPower follow.
+    // Methods from ::vendor::broken::power::V1_0::ISlimPower follow.
     Return<int32_t> getFeature(SlimFeature feature) override;
 
     // Methods from ::android::hidl::base::V1_0::IBase follow.
